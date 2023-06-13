@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&family=Rowdies:wght@300&family=Sacramento&display=swap');
+
+
+/*Fondo Principal*/
+.FondoGalactico{
+	/*Atributos*/
+}
+
+/*Fondos Secundarios*/
+.FondoObscuro{
+	background-color: #000000;
+	color: white;
+}
+
+
+
+/*Logo*/
+.space{
+	color: #174C4F;
+}.songs{
+	color: #FF9666;
+}
+
+
+
+/*Margenes*/
+.Margen-0{
+	margin: 0;
+}
+
+
+
+/*Contenedores*/
+.ContenedorFull{
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.ContenedorGrid{
+	height: 100vh;
+	display: grid;
+	grid-template-columns: 30% 70%;
+}
+
+
+
+/*Fuentes*/
+.FuentePrincipal{
+	font-family: 'Rowdies', cursive;
+}
+.FuenteSecundaria{
+	font-family: 'Sacramento', cursive;
+}
+.FuenteParrafos{
+	font-family: 'Quicksand', sans-serif;
+}
+
+
+
+/*Alineaciones*/
+.TotalCenter{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
