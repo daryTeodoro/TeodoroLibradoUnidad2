@@ -37,7 +37,6 @@
 
 	</div>
 
-
 	<!--Codepen.io (ejemplo de animacion: https://codepen.io/creativeocean/pen/qBbBLyB)-->
 
 

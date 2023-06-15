@@ -48,7 +48,7 @@
 }
 
 .nav div.main_list ul li a:hover {
-    color: #00E676;
+    color: #00ddc9;
 }
 
 
