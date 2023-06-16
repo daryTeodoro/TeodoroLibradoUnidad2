@@ -10,12 +10,12 @@ body::-webkit-scrollbar { /* CSS scrollbar del body*/
     border-radius: 10px;
 }
 
-/*Fondo Principal*/
+/**Fondo Principal**/
 .FondoGalactico{
 	/*Atributos*/
 }
 
-/*Fondos Secundarios*/
+/**Fondos Secundarios**/
 .FondoObscuro{
 	background-color: #000000;
 	color: white;
@@ -23,7 +23,7 @@ body::-webkit-scrollbar { /* CSS scrollbar del body*/
 
 
 
-/*Logo*/
+/**Logo**/
 .space{
 	color: #174C4F;
 }.songs{
@@ -31,48 +31,77 @@ body::-webkit-scrollbar { /* CSS scrollbar del body*/
 }
 
 
-
-/*Margenes*/
-.Margen-0{
-	margin: 0;
+/**Iconos**/
+.Play{
+    color: #caf2fd;
+    font-size: 2rem;
+    cursor: pointer;
+}.Play:hover{
+    color: #8797ff;
 }
 
 
+/**Margenes**/
+.Margen-0{
+	margin: 0;
+}.Margen-1{
+    margin: 40px 10px;
+}
 
-/*Contenedores*/
+
+/**Bordes**/
+.BordeBlanco{
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+}
+
+
+/**Contenedores**/
 .ContenedorFull{
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-}
-
-.ContenedorGrid{
+}.ContenedorGrid{
 	height: 100vh;
 	display: grid;
 	grid-template-columns: 30% 70%;
+}.ContenedorMusicas{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 10% 20% 20% 20% 20% 10%;
 }
 
 
-
-/*Fuentes*/
+/**Fuentes**/
 .FuentePrincipal{
 	font-family: 'Rowdies', cursive;
-}
-.FuenteSecundaria{
+}.FuenteSecundaria{
 	font-family: 'Sacramento', cursive;
-}
-.FuenteParrafos{
+}.FuenteParrafos{
 	font-family: 'Quicksand', sans-serif;
 }
 
 
 
-/*Alineaciones*/
+/**Alineaciones**/
 .TotalCenter{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+}
+
+
+/**Inputs**/
+.CampoFormulario{
+    padding: 10px 5px;
+    border: 3px solid #caf2fd;
+    border-radius: 10px;
+}.CampoFormulario:focus{
+    outline: none;
+    background-color: #e0ecff;
+    border-color: #8797ff;
 }
