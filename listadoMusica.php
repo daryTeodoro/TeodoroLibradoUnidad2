@@ -15,13 +15,13 @@ if ($count > 0) {
 	while($campo=$query->fetch(PDO::FETCH_ASSOC)) {
 		$Contador++;
 		//Mostramos los datos de las musicas
-		echo'<div class="ContenedorMusicas FuenteParrafos">
+		echo'<div class="ContenedorMusicas FuenteParrafos" style="margin-bottom: 15px;">
 		    <div>'. $Contador .'</div>
 		    <div><img src="'. $campo['rutaportada'] .'" width="100px" height="100px"></div>
 		    <div><b class="songs">'. $campo['nombre'] .'</b></div>
 		    <div style="color: #a4a4a4;">'. $campo['autor'] .'</div>
 		    <div>'. $campo['album'] .'</div>
-		    <div><ion-icon name="play" class="Play"></ion-icon></div>
+		    <div><ion-icon name="play" class="Play" onclick="reproducir('.$campo['id']./*Id de la Musica*/')"></ion-icon></div>
 		</div>';
 	}
 

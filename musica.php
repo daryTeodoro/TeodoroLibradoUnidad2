@@ -7,53 +7,68 @@
 	<title>Space Songs - Bienvenido</title>
 	<!--JQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--Boostrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 	<!--CSS-->
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <!--CSS Local-->
     <style type="text/css">
-    	/****Borrar mas adelante****/
-    	.BordeBlanco{
-    		border: 2px solid #ffffff;
-    		border-radius: 10px;
-    	}.Margen-1{
-    		margin: 40px 10px;
-    	}.ContenedorMusicas{
-    		display: grid;
-    		align-items: center;
-    		justify-content: center;
-    		grid-template-columns: 10% 20% 20% 20% 20% 10%;
-    	}.Play{
-    		color: #caf2fd;
-    		font-size: 2rem;
-    		cursor: pointer;
-    	}.Play:hover{
-    		color: #8797ff;
-    	}.CampoFormulario{
-    		padding: 10px 5px;
-    		border: 3px solid #caf2fd;
-    		border-radius: 10px;
-    	}.CampoFormulario:focus{
-    		outline: none;
-    		background-color: #e0ecff;
-    		border-color: #8797ff;
-    	}
-
     	.ContenedorGrid{
     		grid-template-columns: 70% 30%;
     	}
+
+    	.Linea{
+    		border: none;
+    		border-top: 3px solid white;
+    		margin: 5px 0px 20px;
+    	}
+
+    	.animated-text {
+    		animation: typing-animation 1s linear forwards;
+    	}
+
+    	@keyframes typing-animation {
+    		0% {
+    			opacity: 0;
+    		}
+    		100% {
+    			opacity: 1;
+    		}
+    	}
+
+    	#Main{
+    		display: none;
+    	}#Modal{
+    		display: none;
+    	}
+
+    	.Barra { /*Barra de Porgreso del Reproductor Inferior*/
+            height: 10px;
+            width: 500px;
+            margin-top: 10px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            cursor: hand;
+            background: #dbecff;
+        }#AudioBarra{
+        	display: none;
+        }
     </style>
 </head>
-<body class="Margen-0 FondoObscuro">
+<body class="Margen-0 FondoObscuro" id="Body">
 	<!--Preloader-->
-	<div class="ContenedorFull" align="center">
+	<div class="ContenedorFull Cambio" align="center" id="Start">
 		<div class="FuentePrincipal" style="font-size: 5rem;">
-			<b class="space">Space</b>
-			<b class="songs">Songs</b>
+			<b class="space animated-text">Space</b>
+			<b class="songs animated-text">Songs</b>
 		</div>
 	</div>
 
+
+
 	<!--Principal (Contenido)-->
-	<div align="center" style="padding: 40px 20px;">
+	<div class="Cambio" align="center" style="padding: 15px 20px 5px;" id="Main">
 		<div class="FuentePrincipal" style="font-size: 4rem;">
 			<b class="space">Space</b>
 			<b class="songs">Songs</b>
@@ -64,10 +79,11 @@
 	    </p>
 	    <!--Buscador-->
 		<div class="Margen-1">
-			<input type="text" name="Buscar" class="CampoFormulario" placeholder="Buscar Música">
+			<input type="text" id="Buscar" class="CampoFormulario" placeholder="Buscar Música">
 		</div>
 		<!--Listado de Musicas-->
 		<div>
+			<!--Columnas de la lista-->
 			<div class="ContenedorMusicas FuenteSecundaria" style="font-size: 2rem;">
 				<div>N°</div>
 				<div>Portada</div>
@@ -75,13 +91,156 @@
 				<div>Autor</div>
 				<div>Album</div>
 				<div>Play</div>
-			</div><hr style="margin: 0px 0 15px;">
-			<?php include('listadoMusica.php') ?>
+			</div>
+			<hr class="Linea"> <!--Linea Divisora-->
+			
+			<div id="ListaMusicas"><?php include('listadoMusica.php') ?></div> <!--Archivo con consulta de la tabla Musicas-->
 		</div>
 	</div>
+
+
+
+	<!--Reproductor de Musica-->
+	<div class="ReproductorDesactivado FuenteParrafos Max-Min" id="Reproductor" onclick="maximizar()" align="center">
+		<!--Aqui van datos de la Musica-->
+	</div>
+
+	<div class="ContenedorFull FuentePrincipal" id="Modal" align="center">
+		<!--Modal del Reproductor-->
+	</div>
+
+
+	<script type="text/javascript">
+		let reproductor = document.getElementById("Reproductor"); //Contenedor del Reproductor
+		let body = document.getElementById("Body"); //Contenedor del Reproductor
+		let main = document.getElementById("Main"); //Contenedor del contenido principal
+		let modal = document.getElementById("Modal"); //Contenedor del reproductor en modal
+
+		setTimeout(() => {
+			$('.Cambio').animate({height: "toggle", opacity: "toggle"}, "slow");
+		}, 3000);
+	    
+	    //Evento al dar clic en PLAY de algun audio de la lista (Reproducir Musica)
+		function reproducir(Id) {
+			// Remover una clase
+			reproductor.classList.remove("ReproductorDesactivado");
+			// Agregar una clase
+			reproductor.classList.add("ReproductorActivado");
+			// Agregar margin extra al body
+			body.style.marginBottom = '65px';
+
+			$.ajax({
+				type: "post",
+				url: "reproducirMusica.php",
+				data: {
+					Id: Id
+				},
+				success: function(respuesta){
+					$("#Reproductor").html(respuesta);
+				}
+			});
+
+			$.ajax({
+				type: "post",
+				url: "modal.php",
+				data: {
+					Id: Id
+				},
+				success: function(r){
+					$("#Modal").html(r);
+				}
+			});
+		}
+
+
+		/*Cambiar entre Reproductores*/
+		function maximizar(){
+			$('#Reproductor').fadeOut("fast",function(){
+                modal.style.display = "flex";
+                main.style.display = "none";
+                body.style.marginBottom = '0px';
+            });
+        }
+
+
+		//Codigo para buscar una Musica (Filtrar)
+        $(function(){
+            $("#Buscar").on("keyup", function(){
+                var buscar = $("#Buscar").val();
+
+                $.ajax({
+                    type: "post",
+                    url: "buscar.php",
+                    data: {
+                        Title: buscar
+                    },
+                    success: function(respuesta){
+                        $("#ListaMusicas").html(respuesta);
+                    }
+                })
+            })
+        });
+
+        //Avance de la Barra de progreso de Reproductor Inferior
+        function ActMusic() {
+            //Reproductor de Audio Inferior
+            const musica = document.getElementById("AudioBarra");
+            //Barra de progreso del Reproductor de Audio Inferior
+            var estado = document.getElementById('Estado');
+
+            var progresNow = musica.currentTime / musica.duration * 100;
+
+            if (isNaN(progresNow)) progresNow = 0;
+                progresNow += '%';
+                estado.style.background = 'linear-gradient(to right, #dbecff 0%,#dbecff '+progresNow+',#56006f '+progresNow+',#56006f 100%)';
+        }
+
+        //Cambiar minuto de la musica por medio de la barra de progreso Reproductor Inferior
+        function Adelantar(e) {
+            const musica = document.getElementById("AudioBarra");
+            var estado = document.getElementById('Estado');
+
+            var position = (e.clientX - estado.offsetLeft) / estado.clientWidth;
+            console.log(position);
+            musica.currentTime = musica.duration * position;
+        }
+
+        //Evento al dar clic en PLAY/PAUSA del Reproductor de audio Inferior
+        function Start() {
+            //Boton PLAY de Reproductor Inferior
+            let empezar = document.getElementById('PlayBarra');
+            //Boton PAUSA de Reproductor Inferior
+            let pausar = document.getElementById('PauseBarra');
+            //Reproductor de Audio Inferior
+            const player = document.getElementById("AudioBarra");
+
+            if (player.paused || player.ended) {
+                pausar.style.display = 'block';
+                empezar.style.display = 'none';
+                player.play();
+            } else {
+                pausar.style.display = 'none';
+                empezar.style.display = 'block';
+                player.pause();
+            }
+        }
+
+        //Evento al terminar el audio del Reproductor Inferior
+        function PararMusic() {
+            //Boton PLAY de Reproductor Inferior
+            let empezar = document.getElementById('PlayBarra');
+            //Boton PAUSE de Reproductor Inferior
+            let pausar = document.getElementById('PauseBarra');
+                empezar.style.display = 'block';
+                pausar.style.display = 'none';
+        }
+	</script>
 
 	<!--Libreria de Iconos-->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- JS Boostrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
 </body>
 </html>

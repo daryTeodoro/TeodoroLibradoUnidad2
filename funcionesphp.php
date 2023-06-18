@@ -1,32 +1,12 @@
 <?php
 require_once 'conexion.php';
 
-/*Funcion para consultar el registro de Musicas en la tabla Musicas*/
-function consultarMusicas() {
-
-    $conexion= new conexion();
-    $query=$conexion->prepare('SELECT * FROM musicas ORDER BY nombre ASC');
-    $query->bindParam(':correo',$Correo);
-    $query->execute();
-    $count=$query->rowCount(); //Cuenta si existe el registro
-
-    if ($count == 1) {
-        // Si se encontró un registro, devuelve los datos del usuario como un array asociativo
-        return $query->fetch(PDO::FETCH_ASSOC);
-    } else {
-        // Si no se encontró ningún registro, devuelve false
-        return false;
-    }
-}
-
-
-
 /*Funcion para consultar datos de musica en la tabla Musicas*/
-function reproducirMusica($Correo) {
+function reproducirMusica($Id) {
 
     $conexion= new conexion();
-    $query=$conexion->prepare('SELECT * FROM usuarios WHERE correo = :correo');
-    $query->bindParam(':correo',$Correo);
+    $query=$conexion->prepare('SELECT * FROM musicas WHERE id = :id');
+    $query->bindParam(':id',$Id);
     $query->execute();
     $count=$query->rowCount(); //Cuenta si existe el registro
 
