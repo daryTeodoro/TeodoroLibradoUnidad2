@@ -1,5 +1,5 @@
 <?php
-require "funcionesphp.php";
+require "funciones.php";
 //Obtenemos el folio a traves del metodo POST
 $Id_Musica = $_POST['Id'];
 
