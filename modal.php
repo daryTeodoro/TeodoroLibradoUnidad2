@@ -10,15 +10,20 @@ echo'<div style="font-size: 3rem;">
   <b class="songs">Songs<b>
 </div>';
 
-echo'<img src="'. $Musica['rutaportada'] .'" style="height: 300px; width: 300px; border-radius: 50%; margin: 20px 0px;">';
+echo'<img src="'. $Musica['rutaportada'] .'" class="ImgPortada">';
 
 echo'<div>'. $Musica['nombre'] .' - '. $Musica['autor'] .'</div>';
 
-echo '<div class="col-6 Progress">
-          <div id="Estado" onclick="Adelantar(event)" class="Barra"></div>
-          <audio controls autoplay id="AudioBarra" onended="PararMusic()" ontimeupdate="ActMusic()"">
-            <source src="'.$Musica['rutaaudio']./*Ruta del archivo de audio del podcast*/'">
-          </audio>
-      </div>';
+echo '<div class="Progress">
+  <div id="Estado" onclick="Adelantar(event)" class="Barra"></div>
+  <audio controls autoplay id="AudioBarra" onended="PararMusic()" ontimeupdate="ActMusic()"">
+    <source src="'.$Musica['rutaaudio']./*Ruta del archivo de audio del podcast*/'">
+  </audio>
+</div>';
+
+echo '<div class="Progress">
+  <ion-icon name="play" id="PlayBarra" onclick="Start()"></ion-icon>
+  <ion-icon name="pause" id="PauseBarra" onclick="Start()"></ion-icon>
+</div>';
 
 ?>

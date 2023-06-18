@@ -7,8 +7,6 @@
 	<title>Space Songs - Bienvenido</title>
 	<!--JQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!--Boostrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 	<!--CSS-->
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <!--CSS Local-->
@@ -44,8 +42,8 @@
 
     	.Barra { /*Barra de Porgreso del Reproductor Inferior*/
             height: 10px;
-            width: 500px;
-            margin-top: 10px;
+            width: 70vw;
+            margin-top: 20px;
             border-radius: 50px;
             border: none;
             cursor: pointer;
@@ -53,6 +51,40 @@
             background: #dbecff;
         }#AudioBarra{
         	display: none;
+        }
+
+        .CampoFormulario{
+        	border: 3px solid #e5d1fd;
+        	padding: 10px;
+        	width: 60vw;
+        }.CampoFormulario:focus{
+        	outline: none;
+        	border-color: #a1cafb;
+        	background-color: #dff2fd;
+        }
+
+        .ImgPortada{
+        	height: 50vh;
+        	border-radius: 50%;
+        	margin: 20px 0px;
+        }
+
+        #PlayBarra{
+        	font-size: 3rem;
+        	color: #ffffff;
+        	margin-top: 15px;
+        	cursor: pointer;
+        }#PauseBarra{
+        	display: none;
+        	font-size: 3rem;
+        	color: #ffffff;
+        	margin-top: 15px;
+        	cursor: pointer;
+        }
+
+        #Acceso1,
+        #Acceso2{
+        	cursor: pointer;
         }
     </style>
 </head>
@@ -101,7 +133,7 @@
 
 
 	<!--Reproductor de Musica-->
-	<div class="ReproductorDesactivado FuenteParrafos Max-Min" id="Reproductor" onclick="maximizar()" align="center">
+	<div class="ReproductorDesactivado FuenteParrafos Max-Min" id="Reproductor" align="center">
 		<!--Aqui van datos de la Musica-->
 	</div>
 
@@ -239,8 +271,5 @@
 	<!--Libreria de Iconos-->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <!-- JS Boostrap -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
 </body>
 </html>

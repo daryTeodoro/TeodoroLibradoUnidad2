@@ -79,9 +79,6 @@ body::-webkit-scrollbar { /* CSS scrollbar del body*/
     justify-content: center;
     grid-template-columns: 10% 20% 20% 20% 20% 10%;
 }
-.registroForm{
-    display: none;
-}
 
 
 /**Clases del Reproductor**/
