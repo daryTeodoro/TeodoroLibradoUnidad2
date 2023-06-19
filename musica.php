@@ -74,7 +74,7 @@
 
 	    <!--Buscador-->
 		<div class="Margen-1">
-			<input type="text" id="Buscar" class="CampoFormulario" placeholder="Buscar Música">
+			<input type="text" id="Buscar" class="CampoFormulario" placeholder="Buscar Música" autocomplete="off">
 		</div>
 
 		<!--Listado de Musicas-->

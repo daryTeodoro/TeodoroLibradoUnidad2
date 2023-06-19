@@ -12,7 +12,16 @@ let modal = document.getElementById("Modal"); //Contenedor del reproductor en mo
 setTimeout(() => {
   $('.Cambio').animate({height: "toggle", opacity: "toggle"}, "slow");
 }, 3000);
-      
+
+function Senalar(id) {
+  let contmusic = document.getElementById(id);
+  contmusic.style.border = '1px solid #ffffff';
+
+  contmusic.addEventListener('mouseout', function(event) {
+    contmusic.style.border = 'none'; // Restablecer el estilo del fondo al valor predeterminado
+  });
+}
+
 //Evento al dar clic en PLAY de algun audio de la lista (Reproducir Musica)
 function reproducir(Id) {
   // Remover una clase
@@ -108,13 +117,13 @@ function Adelantar(e) {
 
 //Evento al dar clic en PLAY/PAUSA del Reproductor de audio
 function Start() {
-  //Boton PLAY de Reproductor1
-  let played = document.getElementById('PlayReproductor');
-  //Boton PAUSA de Reproductor1
-  let paused = document.getElementById('PauseReproductor');
   //Boton PLAY de Reproductor2
-  let empezar = document.getElementById('PlayBarra');
+  let played = document.getElementById('PlayReproductor');
   //Boton PAUSA de Reproductor2
+  let paused = document.getElementById('PauseReproductor');
+  //Boton PLAY de Reproductor1
+  let empezar = document.getElementById('PlayBarra');
+  //Boton PAUSA de Reproductor1
   let pausar = document.getElementById('PauseBarra');
   //Reproductor de Audio
   const player = document.getElementById("AudioBarra");
@@ -136,11 +145,17 @@ function Start() {
 
 //Evento al terminar el audio del Reproductor
 function PararMusic() {
-  //Boton PLAY de Reproductor
+  //Boton PLAY de Reproductor2
+  let played = document.getElementById('PlayReproductor');
+  //Boton PAUSA de Reproductor2
+  let paused = document.getElementById('PauseReproductor');
+  //Boton PLAY de Reproductor1
   let empezar = document.getElementById('PlayBarra');
-  //Boton PAUSE de Reproductor
+  //Boton PAUSE de Reproductor1
   let pausar = document.getElementById('PauseBarra');
   
   empezar.style.display = 'block';
   pausar.style.display = 'none';
+  paused.style.display = 'none';
+  played.style.display = 'block';
 }
