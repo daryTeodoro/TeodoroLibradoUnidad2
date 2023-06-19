@@ -21,9 +21,8 @@ echo '<div class="Progress">
   </audio>
 </div>';
 
-echo '<div class="Progress">
+echo '<div>
   <ion-icon name="play" id="PlayBarra" onclick="Start()"></ion-icon>
   <ion-icon name="pause" id="PauseBarra" onclick="Start()"></ion-icon>
 </div>';
-
 ?>

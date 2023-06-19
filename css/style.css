@@ -120,7 +120,81 @@ body::-webkit-scrollbar { /* CSS scrollbar del body*/
 
 
 
+/**Linea**/
+.Linea{
+    border: none;
+    border-top: 3px solid white;
+    margin: 5px 0px 20px;
+}
 
+
+
+/**Inputs de Formularios**/
+.CampoFormulario{
+    border: 3px solid #e5d1fd;
+    padding: 10px;
+    width: 60vw;
+}.CampoFormulario:focus{
+    outline: none;
+    border-color: #a1cafb;
+    background-color: #dff2fd;
+}
+
+
+
+/**Contenedor Principal y Reproductor Modal al inicio**/
+#Main{
+    display: none;
+}#Modal{
+    display: none;
+}
+
+
+/******Reproductor en Modal******/
+/**Imagen de Portada**/
+.ImgPortada{
+    height: 50vh;
+    border-radius: 50%;
+    margin: 20px 0px;
+}
+/**Boton Play/Pause**/
+#PlayBarra{
+    display: none;
+    font-size: 3rem;
+    color: #ffffff;
+    margin-top: 15px;
+    cursor: pointer;
+}#PauseBarra{
+    font-size: 3rem;
+    color: #ffffff;
+    margin-top: 15px;
+    cursor: pointer;
+}
+/**CSS de la barra de reproduccion**/
+.Barra {
+    height: 10px;
+    width: 40vw;
+    margin-top: 20px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    cursor: hand;
+    background: #dbecff;
+}#AudioBarra{
+    display: none;
+}
+
+
+
+/**Columnas para Acceder a 'Reproductor Modal'**/
+#Acceso1,
+#Acceso2{
+    cursor: pointer;
+    height: 100%;
+
+}#PlayReproductor{
+    display: none;
+}
 
 
 

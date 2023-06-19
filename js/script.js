@@ -1,0 +1,137 @@
+/*Cambiar Formulario de Login a Registro y vicebersa*/
+$('.change-view .change_L-C').click(function(){
+  $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+});
+
+
+let reproductor = document.getElementById("Reproductor"); //Contenedor del Reproductor
+let body = document.getElementById("Body"); //Contenedor del Reproductor
+let main = document.getElementById("Main"); //Contenedor del contenido principal
+let modal = document.getElementById("Modal"); //Contenedor del reproductor en modal
+
+setTimeout(() => {
+  $('.Cambio').animate({height: "toggle", opacity: "toggle"}, "slow");
+}, 3000);
+      
+//Evento al dar clic en PLAY de algun audio de la lista (Reproducir Musica)
+function reproducir(Id) {
+  // Remover una clase
+  reproductor.classList.remove("ReproductorDesactivado");
+  // Agregar una clase
+  reproductor.classList.add("ReproductorActivado");
+  // Agregar margin extra al body
+  body.style.marginBottom = '65px';
+
+  $.ajax({
+    type: "post",
+    url: "reproducirMusica.php",
+    data: {
+      Id: Id
+    },
+    success: function(respuesta){
+      $("#Reproductor").html(respuesta);
+    }
+  });
+
+  $.ajax({
+    type: "post",
+    url: "modal.php",
+    data: {
+      Id: Id
+    },
+    success: function(r){
+      $("#Modal").html(r);
+    }
+  });
+}
+
+
+/*Cambiar entre Reproductores*/
+function maximizar(){
+  $('#Reproductor').fadeOut("fast",function(){
+    modal.style.display = "flex";
+    main.style.display = "none";
+    body.style.marginBottom = '0px';
+  });
+}
+
+
+//Codigo para buscar una Musica (Filtrar)
+$(function(){
+  $("#Buscar").on("keyup", function(){
+    var buscar = $("#Buscar").val();
+
+    $.ajax({
+      type: "post",
+      url: "buscar.php",
+      data: {
+        Title: buscar
+      },
+      success: function(respuesta){
+        $("#ListaMusicas").html(respuesta);
+      }
+    })
+  })
+});
+
+
+//Avance de la Barra de progreso de Reproductor Inferior
+function ActMusic() {
+  //Reproductor de Audio Inferior
+  const musica = document.getElementById("AudioBarra");
+  //Barra de progreso del Reproductor de Audio Inferior
+  var estado = document.getElementById('Estado');
+
+  var progresNow = musica.currentTime / musica.duration * 100;
+
+  if (isNaN(progresNow)) progresNow = 0;
+  progresNow += '%';
+  estado.style.background = 'linear-gradient(to right, #dbecff 0%,#dbecff '+progresNow+',#56006f '+progresNow+',#56006f 100%)';
+}
+
+
+//Cambiar minuto de la musica por medio de la barra de progreso Reproductor Inferior
+function Adelantar(e) {
+  const musica = document.getElementById("AudioBarra");
+  var estado = document.getElementById('Estado');
+
+  var position = (e.clientX - estado.offsetLeft) / estado.clientWidth;
+  console.log(position);
+  musica.currentTime = musica.duration * position;
+}
+
+
+//Evento al dar clic en PLAY/PAUSA del Reproductor de audio Inferior
+function Start() {
+  //Boton PLAY de Reproductor1
+  let played = document.getElementById('PlayReproductor');
+  //Boton PAUSA de Reproductor1
+  let paused = document.getElementById('PauseReproductor');
+  //Boton PLAY de Reproductor2
+  let empezar = document.getElementById('PlayBarra');
+  //Boton PAUSA de Reproductor2
+  let pausar = document.getElementById('PauseBarra');
+  //Reproductor de Audio
+  const player = document.getElementById("AudioBarra");
+
+  if (player.paused || player.ended) {
+    pausar.style.display = 'flex';
+    empezar.style.display = 'none';
+    player.play();
+  } else {
+    pausar.style.display = 'none';
+    empezar.style.display = 'flex';
+    player.pause();
+  }
+}
+
+//Evento al terminar el audio del Reproductor
+function PararMusic() {
+  //Boton PLAY de Reproductor
+  let empezar = document.getElementById('PlayBarra');
+  //Boton PAUSE de Reproductor
+  let pausar = document.getElementById('PauseBarra');
+  
+  empezar.style.display = 'block';
+  pausar.style.display = 'none';
+}
