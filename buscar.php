@@ -4,7 +4,7 @@ require_once "conexion.php";
 $Busqueda = $_POST["Title"];
 //Busqueda de similitudes
 $conexion= new conexion();
-$query = $conexion->prepare("SELECT * FROM musicas WHERE nombre LIKE '%$Busqueda%' OR autor LIKE '%$Busqueda%'");
+$query = $conexion->prepare("SELECT * FROM musicas WHERE nombre LIKE '%$Busqueda%' OR autor LIKE '%$Busqueda%' ORDER BY album ASC");
 $query->execute();
 $count=$query->rowCount();
 

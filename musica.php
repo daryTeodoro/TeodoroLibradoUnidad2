@@ -1,3 +1,20 @@
+<?php
+    session_start();
+
+    if (empty($_SESSION['Usuario'])) {
+        echo "<script>
+            window.location.href = 'login.php';
+        </script>";
+    }
+
+    if (isset($_POST['Exit'])) {
+    	session_destroy();
+        echo "<script>
+            window.location.href = 'login.php';
+        </script>";
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,12 +67,19 @@
 		<p class="FuenteParrafos" style="font-size: 1rem;">
 		    Encuentra la Mejor Variedad de Música
 	    </p>
+	    <br>
+	    <form method="post" action="">
+	    	<button type="sumbit" name="Exit" class="boton">Cerrar Sesión</button>
+	    </form>
+
 	    <!--Buscador-->
 		<div class="Margen-1">
 			<input type="text" id="Buscar" class="CampoFormulario" placeholder="Buscar Música">
 		</div>
+
 		<!--Listado de Musicas-->
 		<div>
+			<hr class="Linea" style="margin-bottom: 10px;"> <!--Linea Divisora-->
 			<!--Columnas de la lista-->
 			<div class="ContenedorMusicas FuenteSecundaria" style="font-size: 2rem;">
 				<div>N°</div>

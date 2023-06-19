@@ -48,11 +48,16 @@ function reproducir(Id) {
 
 /*Cambiar entre Reproductores*/
 function maximizar(){
-  $('#Reproductor').fadeOut("fast",function(){
-    modal.style.display = "flex";
-    main.style.display = "none";
-    body.style.marginBottom = '0px';
-  });
+  $('#Reproductor').fadeOut("slow");
+  $('#Main').fadeOut("slow");
+  modal.style.display = 'flex';
+  body.style.marginBottom = '0px';
+}
+function minimizar(){
+  $('#Modal').fadeOut("slow");
+  $('#Reproductor').fadeIn("slow");
+  $('#Main').fadeIn("slow");
+  body.style.marginBottom = '65px';
 }
 
 
@@ -75,11 +80,11 @@ $(function(){
 });
 
 
-//Avance de la Barra de progreso de Reproductor Inferior
+//Avance de la Barra de progreso de Reproductor
 function ActMusic() {
-  //Reproductor de Audio Inferior
+  //Reproductor de Audio predeterminado
   const musica = document.getElementById("AudioBarra");
-  //Barra de progreso del Reproductor de Audio Inferior
+  //Barra de progreso del Reproductor de Audio
   var estado = document.getElementById('Estado');
 
   var progresNow = musica.currentTime / musica.duration * 100;
@@ -90,7 +95,7 @@ function ActMusic() {
 }
 
 
-//Cambiar minuto de la musica por medio de la barra de progreso Reproductor Inferior
+//Cambiar minuto de la musica por medio de la barra de progreso
 function Adelantar(e) {
   const musica = document.getElementById("AudioBarra");
   var estado = document.getElementById('Estado');
@@ -101,7 +106,7 @@ function Adelantar(e) {
 }
 
 
-//Evento al dar clic en PLAY/PAUSA del Reproductor de audio Inferior
+//Evento al dar clic en PLAY/PAUSA del Reproductor de audio
 function Start() {
   //Boton PLAY de Reproductor1
   let played = document.getElementById('PlayReproductor');
@@ -115,12 +120,16 @@ function Start() {
   const player = document.getElementById("AudioBarra");
 
   if (player.paused || player.ended) {
-    pausar.style.display = 'flex';
+    pausar.style.display = 'block';
     empezar.style.display = 'none';
+    paused.style.display = 'block';
+    played.style.display = 'none';
     player.play();
   } else {
     pausar.style.display = 'none';
-    empezar.style.display = 'flex';
+    empezar.style.display = 'block';
+    paused.style.display = 'none';
+    played.style.display = 'block';
     player.pause();
   }
 }

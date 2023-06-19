@@ -134,6 +134,7 @@ body::-webkit-scrollbar { /* CSS scrollbar del body*/
     border: 3px solid #e5d1fd;
     padding: 10px;
     width: 60vw;
+    font-family: 'Quicksand', sans-serif;
 }.CampoFormulario:focus{
     outline: none;
     border-color: #a1cafb;
@@ -164,11 +165,17 @@ body::-webkit-scrollbar { /* CSS scrollbar del body*/
     color: #ffffff;
     margin-top: 15px;
     cursor: pointer;
-}#PauseBarra{
+}#PauseBarra,
+#IconMinimizar{
     font-size: 3rem;
     color: #ffffff;
     margin-top: 15px;
     cursor: pointer;
+}
+#PlayBarra:hover,
+#PauseBarra:hover,
+#IconMinimizar:hover{
+    color: #8797ff;
 }
 /**CSS de la barra de reproduccion**/
 .Barra {
@@ -182,6 +189,12 @@ body::-webkit-scrollbar { /* CSS scrollbar del body*/
     background: #dbecff;
 }#AudioBarra{
     display: none;
+}.Opciones{
+    width: 40vw;
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -205,6 +218,8 @@ body::-webkit-scrollbar { /* CSS scrollbar del body*/
     padding: 10px 30px;
     border-radius: 50px;
     border: 1px solid #7279f9;
+}.boton:hover{
+    background-color: #c8ddfc;
 }
 
 

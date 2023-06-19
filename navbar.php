@@ -314,13 +314,14 @@
 <nav class="nav">
         <div class="container">
             <div class="logo">
-                <a href="#" class="FuentePrincipal"><b class="space">Space</b><b class="songs">Songs</b></a>
+                <a href="index.php" class="FuentePrincipal"><b class="space">Space</b><b class="songs">Songs</b></a>
             </div>
             <!--Menu-->
             <div id="mainListDiv" class="main_list">
                 <ul class="navlinks FuenteSecundaria">
-                    <li><a href="login.php">Crear Cuenta</a></li>
-                    <li><a href="login.php">Iniciar Sesión</a></li>
+                    <li id="ARegistro"><a href="login.php#Registrar">Crear Cuenta</a></li>
+                    <li id="ALogin"><a href="login.php">Iniciar Sesión</a></li>
+                    <li id="ABack"><a href="index.php">Volver</a></li>
                 </ul>
             </div>
             <!--Boton Menu Responsive-->
