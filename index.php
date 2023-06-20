@@ -11,6 +11,8 @@
     <style type="text/css">
     	.TotalCenter{
     		height: 100vh;
+    	}#ABack{
+    		display: none;
     	}
     </style>
 </head>

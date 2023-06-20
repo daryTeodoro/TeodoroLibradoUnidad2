@@ -7,7 +7,7 @@ $Musica = reproducirMusica($Id_Musica);
 
 echo'<img src="'. $Musica['rutaportada'] .'" class="ImgPortada">';
 
-echo'<div style="font-size: 1.1rem;">'. $Musica['nombre'] .' - <b style="color: #a4a4a4;">'. $Musica['autor'] .'</b></div>';
+echo'<div style="font-size: 1.1rem; color: #ffffff;">'. $Musica['nombre'] .' - <b style="color: #a4a4a4;">'. $Musica['autor'] .'</b></div>';
 
 echo '<div class="Progress">
   <div id="Estado" onclick="Adelantar(event)" class="Barra"></div>

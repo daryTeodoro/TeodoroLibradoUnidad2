@@ -1,24 +1,24 @@
-/*Cambiar Formulario de Login a Registro y vicebersa*/
-$('.change-view .change_L-C').click(function(){
-  $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
-});
-
-
 let reproductor = document.getElementById("Reproductor"); //Contenedor del Reproductor
 let body = document.getElementById("Body"); //Contenedor del Reproductor
 let main = document.getElementById("Main"); //Contenedor del contenido principal
 let modal = document.getElementById("Modal"); //Contenedor del reproductor en modal
 
+/*Mostrar por 3 segundos una vista principal*/
 setTimeout(() => {
   $('.Cambio').animate({height: "toggle", opacity: "toggle"}, "slow");
 }, 3000);
 
+
+/*Evento del mouse en lista de musicas*/
 function Senalar(id) {
+  /*cuando se pone el mouse en un elemento*/
   let contmusic = document.getElementById(id);
   contmusic.style.border = '1px solid #ffffff';
-
+  contmusic.style.background = '#000000';
+  /*cuando se quite el mosuse del elemento*/
   contmusic.addEventListener('mouseout', function(event) {
     contmusic.style.border = 'none'; // Restablecer el estilo del fondo al valor predeterminado
+    contmusic.style.background = 'transparent';
   });
 }
 
@@ -59,11 +59,13 @@ function reproducir(Id) {
 function maximizar(){
   $('#Reproductor').fadeOut("slow");
   $('#Main').fadeOut("slow");
-  modal.style.display = 'flex';
+  setTimeout(() => {
+    modal.style.display = 'flex';
+  }, 600);
   body.style.marginBottom = '0px';
 }
 function minimizar(){
-  $('#Modal').fadeOut("slow");
+  modal.style.display = 'none';
   $('#Reproductor').fadeIn("slow");
   $('#Main').fadeIn("slow");
   body.style.marginBottom = '65px';

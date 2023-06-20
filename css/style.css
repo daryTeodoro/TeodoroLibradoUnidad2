@@ -12,13 +12,16 @@ body::-webkit-scrollbar { /* CSS scrollbar del body*/
 
 /**Fondo Principal**/
 .FondoGalactico{
-	/*Atributos*/
+	background: rgba(0, 0, 0, 0.7) url(https://www.10wallpaper.com/wallpaper/1366x768/1602/Planets_space_stars-Latest_Desktop_Wallpaper_1366x768.jpg) no-repeat center fixed; 
+    background-size: cover;
+    background-blend-mode: darken;
 }
 
 /**Fondos Secundarios**/
 .FondoObscuro{
-	background-color: #000000;
-	color: white;
+	background: rgba(0, 0, 0, 0.7) url(https://images.pexels.com/photos/1567069/pexels-photo-1567069.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) no-repeat center center fixed; 
+    background-size: cover;
+    background-blend-mode: darken;
 }
 
 

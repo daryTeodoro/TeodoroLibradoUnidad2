@@ -1,12 +1,14 @@
 <?php
     session_start();
 
+    //Si no hay una sesion activa:
     if (empty($_SESSION['Usuario'])) {
         echo "<script>
             window.location.href = 'login.php';
         </script>";
     }
 
+    //Si se da clic en cerrar sesion:
     if (isset($_POST['Exit'])) {
     	session_destroy();
         echo "<script>
@@ -32,6 +34,7 @@
     		grid-template-columns: 70% 30%;
     	}
 
+    	/*Animacion en Texto*/
     	.animated-text {
     		animation: typing-animation 1s linear forwards;
     	}
@@ -46,9 +49,9 @@
     	}
     </style>
 </head>
-<body class="Margen-0 FondoObscuro" id="Body">
-	<!--Preloader-->
-	<div class="ContenedorFull Cambio" align="center" id="Start">
+<body class="Margen-0 FondoGalactico" id="Body" style="color: #ffffff;">
+	<!--Animacion de Carga establecida-->
+	<div class="ContenedorFull Cambio FondoObscuro" align="center" id="Start">
 		<div class="FuentePrincipal" style="font-size: 5rem;">
 			<b class="space animated-text">Space</b>
 			<b class="songs animated-text">Songs</b>
@@ -68,6 +71,7 @@
 		    Encuentra la Mejor Variedad de Música
 	    </p>
 	    <br>
+	    <!--Boton para cerrar sesion-->
 	    <form method="post" action="">
 	    	<button type="sumbit" name="Exit" class="boton">Cerrar Sesión</button>
 	    </form>
