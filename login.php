@@ -30,7 +30,7 @@
         }
     </style>
 </head>
-<body class="FuenteParrafos" style="margin: 0px;">
+<body class="FuenteParrafos FondoObscuro" style="margin: 0px;color: #ffffff;">
 <?php include('navbar.php'); ?>
 <div class="ContenedorFull">
 
