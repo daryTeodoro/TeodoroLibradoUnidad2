@@ -6,7 +6,7 @@ $L_Correo = $_POST['Correo'];
 $L_Contrasena = $_POST['Psw'];
 
 //Funcion para consultar si el correo ya esta registrado
-$Loguear = consulta($L_Correo);
+$Loguear = consultarUsuario($L_Correo);
 
 if ($Loguear) {
     $Contrasena = $Loguear['contrasena'];
