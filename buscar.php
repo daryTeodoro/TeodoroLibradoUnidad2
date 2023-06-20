@@ -18,11 +18,11 @@ while ($campo=$query->fetch(PDO::FETCH_ASSOC)) {
 	
 	//Mostramos los datos de las musicas
 	$Salida.= '<div class="ContenedorMusicas FuenteParrafos" id="'.$campo['id'].'" style="margin-bottom: 15px;padding-top: 4px;" onmouseover="Senalar('.$campo['id'].')">
-		<div>'. $Contador .'</div>
-		<div><img src="'. $campo['rutaportada'] .'" width="100px" height="100px"></div>
+		<div class="Responsive2">'. $Contador .'</div>
+		<div class="Responsive"><img src="'. $campo['rutaportada'] .'" width="100px" height="100px"></div>
 		<div><b class="songs">'. $campo['nombre'] .'</b></div>
-		<div style="color: #a4a4a4;">'. $campo['autor'] .'</div>
-		<div>'. $campo['album'] .'</div>
+		<div class="Responsive2" style="color: #a4a4a4;">'. $campo['autor'] .'</div>
+		<div class="Responsive">'. $campo['album'] .'</div>
 		<div><ion-icon name="play" class="Play" onclick="reproducir('.$campo['id']./*Id de la Musica*/')"></ion-icon></div>
 	</div>';
 }

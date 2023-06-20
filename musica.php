@@ -21,7 +21,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
 	<link rel="icon" href="img/spacesongLogo.png" alt="favicon">
 	<title>Space Songs - Bienvenido</title>
 	<!--JQuery-->
@@ -45,6 +45,50 @@
     		}
     		100% {
     			opacity: 1;
+    		}
+    	}
+
+    	/*Responsive 750px*/
+    	@media (max-width: 750px) {
+    		.Responsive{
+    			display: none;
+    		}.ContenedorMusicas{
+    			grid-template-columns: 10% 50% 30% 10%;
+    		}
+
+    		.Opciones{
+    			grid-template-columns: 50% 50%;
+    		}#PlayBarra,
+    		#PauseBarra,
+    		#IconMinimizar{
+    			font-size: 2rem;
+    		}
+
+    		.Barra{
+    			height: 8px;
+    			width: 60vw;
+    			margin-top: 10px;
+    		}.ImgPortada{
+    			margin: 10px 0px;
+    		}
+    	}
+
+    	/*Responsive 480*/
+    	@media (max-width: 480px) {
+    		.Responsive2{
+    			display: none;
+    		}.ContenedorMusicas{
+    			grid-template-columns: 60% 40%;
+    		}
+
+    		.ReproductorActivado{
+    			grid-template-columns: 65% 35%;
+    		}
+
+    		.Barra{
+    			width: 80vw;
+    		}.ImgPortada{
+    			height: 35vh;
     		}
     	}
     </style>
@@ -86,11 +130,11 @@
 			<hr class="Linea" style="margin-bottom: 10px;"> <!--Linea Divisora-->
 			<!--Columnas de la lista-->
 			<div class="ContenedorMusicas FuenteSecundaria" style="font-size: 2rem;">
-				<div>N°</div>
-				<div>Portada</div>
+				<div class="Responsive2">N°</div>
+				<div class="Responsive">Portada</div>
 				<div>Nombre</div>
-				<div>Autor</div>
-				<div>Album</div>
+				<div class="Responsive2">Autor</div>
+				<div class="Responsive">Album</div>
 				<div>Play</div>
 			</div>
 			<hr class="Linea"> <!--Linea Divisora-->
