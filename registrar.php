@@ -7,12 +7,12 @@ $C_Correo = $_POST['Correo'];
 $C_Contrasena = $_POST['Psw'];
 
 //Funcion para consultar si el correo ya esta registrado
-$Crear = consulta($C_Correo);
+$Crear = consultarUsuario($C_Correo);
 
 if ($Crear) {
     $response = 2;
 } else {
-    $Registrar = registrar($C_Nombre,$C_Correo,$C_Contrasena);
+    $Registrar = registrarUsuario($C_Nombre,$C_Correo,$C_Contrasena);
 
     if ($Registrar == 1) {
         $_SESSION['Usuario'] = $C_Correo;

@@ -3,7 +3,7 @@
 
     if (!empty($_SESSION['Usuario'])) {
         echo "<script>
-            window.location.href = 'inicio.php';
+            window.location.href = 'musica.php';
         </script>";
     }
 ?>
@@ -14,10 +14,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="img/leer.png" alt="favicon">
-    <title>SpaceSongs!</title>
-    <!--Boostrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="icon" href="img/spacesongLogo.png" alt="favicon">
+    <title>SpaceSongs</title>
     <!--JQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!--CSS-->
@@ -25,34 +23,34 @@
     <!--SweetAlert-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <style type="text/css">
-        #acceder{
+        #ARegistro{
             display: none;
-        }.elementosearch{
+        }#ALogin{
             display: none;
         }
     </style>
 </head>
-<body class="bg-main">
+<body class="FuenteParrafos" style="margin: 0px;">
 <?php include('navbar.php'); ?>
 <div class="ContenedorFull">
 
-    <div class="container" align="center">
-        <h1 class="color-title mb-4"><b>SpaceSongs!</b></h1>
+    <div align="center">
+        <div class="FuentePrincipal" style="font-size: 2.6rem;"><b class="space">Space</b><b class="songs">Songs</b></div>
 
         <!--Fomulario de Inicio de Sesion-->
-        <form method="post" action="" class="loginForm L-R L-C" id="loginForm">
-            <h4 class="color-aditional mb-3"><b>Iniciar Sesión</b></h4>
+        <form method="post" action="" class="loginForm L-C" id="loginForm">
+            <div class="FuenteSecundaria" style="font-size: 2rem; margin: 10px 0px;"><b>Iniciar Sesión</b></div>
             <!--Campos del formulario-->
-            <input type="e-mail" name="L-Correo" id="L-Correo" class="campo" placeholder="Ingresa tu Correo" autocomplete="off" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required title="Ingresa una dirección de correo electrónico válida">
-            <input type="password" name="L-Contrasena" id="L-Contrasena" class="campo" placeholder="Ingresa tu Contraseña" required>
+            <input type="e-mail" name="L-Correo" id="L-Correo" class="CampoFormulario" style="margin-bottom: 10px;" placeholder="Ingresa tu Correo" autocomplete="off">
+            
+            <input type="password" name="L-Contrasena" id="L-Contrasena" class="CampoFormulario" style="margin-bottom: 20px;" placeholder="Ingresa tu Contraseña">
             <!--Boton para Ejecutar-->
-            <div class="mt-3">
-                <button type="sumbit" class="boton">Iniciar Sesion</button>
-            </div>
+            <div>
+                <button type="sumbit" class="boton" id="IniciarSesion">Iniciar Sesion</button>
+            </div><br>
             <!--Opcion para cambiar a formulario de Login-->
-            <div class="mt-3 change-view">
+            <div class="change-view FuenteParrafos">
                 ¿Aun no tienes una cuenta? <b class="change_L-C">Crear una Cuenta</b><br>
-               
             </div>
         </form>
 
@@ -60,20 +58,19 @@
 
         <!--Fomulario de Registro-->
         <form method="post" action="" class="registroForm L-C" id="registroForm">
-            <h4 class="color-aditional mb-3"><b>Crear Cuenta</b></h4>
+            <div class="FuenteSecundaria" style="font-size: 2rem; margin: 10px 0px;"><b>Crear Cuenta</b></div>
             <!--Campos del formulario-->
-            <input type="text" name="C-Nombre" id="C-Nombre" class="campo" placeholder="Ingresa tu Nombre" autocomplete="off" required>
-            <input type="e-mail" name="C-Correo" id="C-Correo" class="campo" placeholder="Ingresa tu Correo" autocomplete="off" pattern="[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$" required title="Ingresa una dirección de correo electrónico válida">
-            <input type="password" name="C-Contrasena" id="C-Contrasena" class="campo" placeholder="Ingresa tu Contraseña" required oninput="vc()">
-            <input type="password" name="C-RContrasena" id="C-RContrasena" class="campo" placeholder="Repite la Contraseña" required oninput="validarCoincidencia()">
-            <br>
-            <i id="error"></i>
+            <input type="text" name="C-Nombre" id="C-Nombre" class="CampoFormulario" style="margin-bottom: 10px;" placeholder="Ingresa tu Nombre" autocomplete="off">
+            
+            <input type="e-mail" name="C-Correo" id="C-Correo" class="CampoFormulario" style="margin-bottom: 10px;" placeholder="Ingresa tu Correo" autocomplete="off">
+            
+            <input type="password" name="C-Contrasena" id="C-Contrasena" class="CampoFormulario" style="margin-bottom: 20px;" placeholder="Ingresa tu Contraseña">
             <!--Boton para Ejecutar-->
-            <div class="mt-3">
-                <button type="sumbit" class="boton" id="Crear" disabled>Crear Cuenta</button>
-            </div>
+            <div>
+                <button type="sumbit" class="boton" id="Crear">Crear Cuenta</button>
+            </div><br>
             <!--Opcion para cambiar a formulario de Login-->
-            <div class="mt-3 change-view">
+            <div class="change-view FuenteParrafos">
                 ¿Ya tienes una cuenta? <b class="change_L-C">Iniciar Sesión</b>
             </div>
         </form>
@@ -82,43 +79,13 @@
 
 </div>
 
-<script src="js/script.js"></script>
+<script src="js/alertas.js"></script>
 
 <script type="text/javascript">
     /*Cambiar Formulario de Login a Registro y vicebersa*/
     $('.change-view .change_L-C').click(function(){
         $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
     });
-    /*Cambiar Formulario de Login a Recuperar y vicebersa*/
-    $('.change-view .change_L-R').click(function(){
-        $('.L-R').animate({height: "toggle", opacity: "toggle"}, "slow");
-    });
-
-    function vc() {
-        var pass1 = document.getElementById("C-Contrasena").value;
-        var pass2 = document.getElementById("C-RContrasena").value;
-
-        if (pass1 !== pass2) {
-            document.getElementById("Crear").disabled = true;
-            document.getElementById("error").innerHTML = "Las contraseñas deben coincidir";
-        } else {
-            document.getElementById("Crear").disabled = false;
-            document.getElementById("error").innerHTML = "";
-        }   
-    }
-
-    function validarCoincidencia() {
-        var password1 = document.getElementById("C-Contrasena").value;
-        var password2 = document.getElementById("C-RContrasena").value;
-
-        if (password1 !== password2) {
-            document.getElementById("error").innerHTML = "Las contraseñas deben coincidir";
-            document.getElementById("Crear").disabled = true;
-        } else {
-            document.getElementById("error").innerHTML = "";
-            document.getElementById("Crear").disabled = false;
-        }
-    }
 
     $(document).ready(function() {
         $('#loginForm').submit(function(e) {
@@ -135,7 +102,7 @@
                 success: function(response) {
                     // Manejar la respuesta del servidor aquí
                     if (response == 1) {
-                        window.location.href = "inicio.php";
+                        window.location.href = "musica.php";
                     } else if (response == 2) {
                         mensajeError("Acceso Denegado", "El correo/contraseña es incorrecto");
                     } else {
@@ -155,12 +122,12 @@
             // Realizar la petición AJAX
             $.ajax({
                 type: 'POST',
-                url: 'Procesos/registrar.php', // Archivo PHP para procesar los datos en el servidor
+                url: 'registrar.php', // Archivo PHP para procesar los datos en el servidor
                 data: { Correo: Correo, Psw: Contrasena, Nombre: Nombre }, // Se envia el dato
                 success: function(response) {
                     // Manejar la respuesta del servidor aquí
                     if (response == 1) {
-                        window.location.href = "inicio.php";
+                        window.location.href = "musica.php";
                     } else if (response == 2) {
                         campoInvalido("Correo Invalido", "El correo ya esta registrado");
                     } else {
@@ -177,26 +144,66 @@
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
         var hash = window.location.hash;
-        if (hash === '#registro') {
+        if (hash === '#Registrar') {
             // Mostrar el formulario de registroForm
-            $('.registroForm').show();
-            $('.loginForm').hide();
-        }
-    });
-
-    document.addEventListener('DOMContentLoaded', function() {
-        var hash = window.location.hash;
-        if (hash === '#recuperar') {
-            // Mostrar el formulario de registroForm
-            $('.recuperarForm').show();
-            $('.loginForm').hide();
+            $('#registroForm').show();
+            $('#loginForm').hide();
         }
     });
 </script>
 
-    <!-- JS Boostrap -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+<script type="text/javascript">
+//Validacion de campos del formulaio del Login
+$(document).ready(function() {
+    let emailreg = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
+
+    $("#IniciarSesion").click(function() {
+        if ($("#L-Correo").val() == "") {
+            campoInvalido('Campo Vacio','El correo esta vacio');
+            return false;
+        }else{
+            if (!emailreg.test($("#L-Correo").val())) {
+                campoInvalido('Campo Invalido','El formato del correo es invalido')
+                return false;
+            }
+        } 
+
+        if ($("#L-Contrasena").val() == "") {
+            campoInvalido('Campo Vacio','La contraseña esta vacia')
+            return false; 
+        }
+    });
+});
+
+//Validacion de campos del formulaio del Registro
+$(document).ready(function() {
+    let emailreg = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
+
+    $("#Crear").click(function() {
+        if ($("#C-Nombre").val() == "") {
+            campoInvalido('Campo Vacio','El nombre esta vacio')
+            return false; 
+        }
+
+        if ($("#C-Correo").val() == "") {
+            campoInvalido('Campo Vacio','El correo esta vacio');
+            return false;
+        }else{
+            if (!emailreg.test($("#C-Correo").val())) {
+                campoInvalido('Campo Invalido','El formato del correo es invalido')
+                return false;
+            }
+        } 
+
+        if ($("#C-Contrasena").val() == "") {
+            campoInvalido('Campo Vacio','La contraseña esta vacia')
+            return false; 
+        }
+    });
+});
+</script>
+
+
     <!--Libreria de Iconos-->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
