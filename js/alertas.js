@@ -2,28 +2,20 @@ function mensajeError(titulo, texto) {
   Swal.fire({
     title: titulo,
     text: texto,
-    icon: 'error'
+    icon: 'error',
+    showConfirmButton: false,
+    allowOutsideClick: false,
+    timer: 2000
   });
 }
-
-
-function mensajeExito(title) {
-  Swal.fire({
-    title: title,
-    icon: 'success',
-    showCloseButton: false,
-    showCancelButton: false,
-    showConfirmButton: false,
-    focusConfirm: false,
-    allowOutsideClick: false
-  })
-}
-
 
 function campoInvalido(alerta, campo) {
   Swal.fire({
     title: alerta,
     text: campo,
-    icon: 'warning'
+    icon: 'warning',
+    showConfirmButton: false,
+    allowOutsideClick: false,
+    timer: 2000
   });
 }
