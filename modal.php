@@ -1,24 +1,33 @@
 <?php
-require "funcionesphp.php";
+require "funciones.php";
 //Obtenemos el folio a traves del metodo POST
 $Id_Musica = $_POST['Id'];
 
 $Musica = reproducirMusica($Id_Musica);
 
-echo'<div style="font-size: 3rem;">
-  <b class="space">Space</b>
-  <b class="songs">Songs<b>
+echo'<img src="'. $Musica['rutaportada'] .'" class="ImgPortada">';
+
+echo'<div style="font-size: 1.1rem; color: #ffffff;">'. $Musica['nombre'] .' - <b style="color: #a4a4a4;">'. $Musica['autor'] .'</b></div>';
+
+echo '<div class="Progress">
+  <div id="Estado" onclick="Adelantar(event)" class="Barra"></div>
+  <audio controls autoplay id="AudioBarra" onended="PararMusic()" ontimeupdate="ActMusic()">
+    <source src="'.$Musica['rutaaudio']./*Ruta del archivo de audio del podcast*/'">
+  </audio>
 </div>';
 
-echo'<img src="'. $Musica['rutaportada'] .'" style="height: 300px; width: 300px; border-radius: 50%; margin: 20px 0px;">';
+echo '<div class="Opciones">
+  <div style="font-size: 1.5rem;">
+    <b class="space">Space</b><b class="songs">Songs</b>
+  </div>
 
-echo'<div>'. $Musica['nombre'] .' - '. $Musica['autor'] .'</div>';
+  <div>
+    <ion-icon name="play" id="PlayBarra" onclick="Start()"></ion-icon>
+    <ion-icon name="pause" id="PauseBarra" onclick="Start()"></ion-icon>
+  </div>
 
-echo '<div class="col-6 Progress">
-          <div id="Estado" onclick="Adelantar(event)" class="Barra"></div>
-          <audio controls autoplay id="AudioBarra" onended="PararMusic()" ontimeupdate="ActMusic()"">
-            <source src="'.$Musica['rutaaudio']./*Ruta del archivo de audio del podcast*/'">
-          </audio>
-      </div>';
-
+  <div>
+    <ion-icon name="scan-circle-outline" id="IconMinimizar" onclick="minimizar()"></ion-icon>
+  </div>
+</div>';
 ?>

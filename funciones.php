@@ -21,7 +21,7 @@ function reproducirMusica($Id) {
 
 
 
-/*Funcion para consultar a partir del CORREO*/
+/*Funcion para consultar a usuario a traves del correo*/
 function consultarUsuario($Correo) {
 
     $conexion= new conexion();

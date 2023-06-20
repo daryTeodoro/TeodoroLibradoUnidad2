@@ -4,7 +4,7 @@ require_once "conexion.php";
 $Busqueda = $_POST["Title"];
 //Busqueda de similitudes
 $conexion= new conexion();
-$query = $conexion->prepare("SELECT * FROM musicas WHERE nombre LIKE '%$Busqueda%' OR autor LIKE '%$Busqueda%'");
+$query = $conexion->prepare("SELECT * FROM musicas WHERE nombre LIKE '%$Busqueda%' OR autor LIKE '%$Busqueda%' ORDER BY album ASC");
 $query->execute();
 $count=$query->rowCount();
 
@@ -17,7 +17,7 @@ while ($campo=$query->fetch(PDO::FETCH_ASSOC)) {
 	$Contador++;
 	
 	//Mostramos los datos de las musicas
-	$Salida.= '<div class="ContenedorMusicas FuenteParrafos" style="margin-bottom: 15px;">
+	$Salida.= '<div class="ContenedorMusicas FuenteParrafos" id="'.$campo['id'].'" style="margin-bottom: 15px;padding-top: 4px;" onmouseover="Senalar('.$campo['id'].')">
 		<div>'. $Contador .'</div>
 		<div><img src="'. $campo['rutaportada'] .'" width="100px" height="100px"></div>
 		<div><b class="songs">'. $campo['nombre'] .'</b></div>
