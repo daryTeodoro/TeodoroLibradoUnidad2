@@ -28,6 +28,19 @@
         }#ALogin{
             display: none;
         }
+
+        .swal2-container.swal2-center>.swal2-popup{
+            background-color: #000000;
+            border-radius: 10px;
+            border: #174C4F 3px solid;
+            padding: 0px 10px 20px;
+        }.swal2-html-container{
+            color: #ffffff !important;
+            font-size: 1rem;
+        }.swal2-title{
+            color: #FF9666 !important;
+            font-size: 1.4rem;
+        }
     </style>
 </head>
 <body class="FuenteParrafos FondoObscuro" style="margin: 0px;color: #ffffff;">
@@ -35,11 +48,11 @@
 <div class="ContenedorFull">
 
     <div align="center">
-        <div class="FuentePrincipal" style="font-size: 2.6rem;"><b class="space">Space</b><b class="songs">Songs</b></div>
+        <div class="FuentePrincipal Responsive" style="font-size: 2.6rem;"><b class="space">Space</b><b class="songs">Songs</b></div>
 
         <!--Fomulario de Inicio de Sesion-->
         <form method="post" action="" class="loginForm L-C" id="loginForm">
-            <div class="FuenteSecundaria" style="font-size: 2rem; margin: 10px 0px;"><b>Iniciar Sesión</b></div>
+            <div class="FuenteSecundaria" style="font-size: 2rem; margin: 10px 0px;"><b class="TextResponsive">Iniciar Sesión</b></div>
             <!--Campos del formulario-->
             <input type="e-mail" name="L-Correo" id="L-Correo" class="CampoFormulario" style="margin-bottom: 10px;" placeholder="Ingresa tu Correo" autocomplete="off">
             
@@ -49,7 +62,7 @@
                 <button type="sumbit" class="boton" id="IniciarSesion">Iniciar Sesion</button>
             </div><br>
             <!--Opcion para cambiar a formulario de Login-->
-            <div class="change-view FuenteParrafos">
+            <div class="change-view FuenteParrafos TextResponsive2">
                 ¿Aun no tienes una cuenta? <b class="change_L-C">Crear una Cuenta</b><br>
             </div>
         </form>
