@@ -17,7 +17,7 @@ echo '<div class="Progress">
 </div>';
 
 echo '<div class="Opciones">
-  <div style="font-size: 1.5rem;">
+  <div class="Responsive" style="font-size: 1.5rem;">
     <b class="space">Space</b><b class="songs">Songs</b>
   </div>
 

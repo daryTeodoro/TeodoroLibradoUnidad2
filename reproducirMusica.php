@@ -5,7 +5,7 @@ $Id_Musica = $_POST['Id'];
 
 $Musica = reproducirMusica($Id_Musica);
 
-echo'<div class="TotalCenter FuentePrincipal" id="Acceso1" style="font-size: 1.5rem;flex-direction:row;" onclick="maximizar()">
+echo'<div class="TotalCenter FuentePrincipal Responsive2" id="Acceso1" style="font-size: 1.5rem;flex-direction:row;" onclick="maximizar()">
   <b class="space">Space</b>
   <b class="songs">Songs</b>
 </div>';
