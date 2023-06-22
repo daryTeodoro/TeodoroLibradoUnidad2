@@ -1,0 +1,12 @@
+.banner{
+	width: 100%;	
+	height: auto;
+	max-height: 350px;
+	display: flex;
+	align-items: center;
+	text-align: left;
+	background: center fixed url("../img/jazz-parallax.jpg");
+}
+.p-parallax{
+	
+}

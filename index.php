@@ -7,6 +7,7 @@
 	<title>Space Songs</title>
 	<!--CSS Externo-->
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/parallax.css">
     <!--CSS Local-->
     <style type="text/css">
     	.TotalCenter{
@@ -43,7 +44,13 @@
 
 
 	<!-- Canciones Jazz(Efectos de scroll) -->
-
+	<div class="banner">
+		<p class="p-parallax">Jazz</p>
+	</div>
+	<div class="description">
+		<h3>"El jazz es la libertad que se desliza entre notas improvisadas."</h3>
+		<p>Accede a la música que detiene el tiempo y el espacio y te encierra con sus notas.</p>
+	</div>
 	<!-- Canciones Boleros(Efectos de scroll) -->
 
 	<!-- Canciones Baladas Romanticas(Efectos de scroll) -->
