@@ -13,11 +13,10 @@ setTimeout(() => {
 function Senalar(id) {
   /*cuando se pone el mouse en un elemento*/
   let contmusic = document.getElementById(id);
-  contmusic.style.border = '1px solid #ffffff';
-  contmusic.style.background = '#000000';
+  contmusic.style.background = '#81005e';
   /*cuando se quite el mosuse del elemento*/
   contmusic.addEventListener('mouseout', function(event) {
-    contmusic.style.border = 'none'; // Restablecer el estilo del fondo al valor predeterminado
+    // Restablecer el estilo del fondo al valor predeterminado
     contmusic.style.background = 'transparent';
   });
 }
