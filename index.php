@@ -8,6 +8,9 @@
 	<!--CSS Externo-->
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/parallax.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <!--CSS Local-->
     <style type="text/css">
     	.TotalCenter{
@@ -44,20 +47,24 @@
 
 
 	<!-- Canciones Jazz(Efectos de scroll) -->
-	<div class="banner">
+	<div class="banner-jazz">
 		<p class="p-parallax">Jazz</p>
 	</div>
-	<div class="description">
-		<h3>"El jazz es la libertad que se desliza entre notas improvisadas."</h3>
-		<p>Accede a la música que detiene el tiempo y el espacio y te encierra con sus notas.</p>
-	</div>
 	<!-- Canciones Boleros(Efectos de scroll) -->
-
+	<div class="banner-boleros">
+		<p class="p-parallax">Boleros</p>
+	</div>
 	<!-- Canciones Baladas Romanticas(Efectos de scroll) -->
-
+	<div class="banner-baladas">
+		<p class="p-parallax">Baladas</p>
+	</div>
 	<!-- Canciones J-Rock(Efectos de scroll) -->
-
+	<div class="banner-jrock">
+		<p class="p-parallax">J-Rock</p>
+	</div>
 	<!-- Canciones Indie(Efectos de scroll) -->
-
+	<div class="banner-indie">
+		<p class="p-parallax">Indie</p>
+	</div>
 </body>
 </html>

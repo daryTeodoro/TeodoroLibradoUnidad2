@@ -1,12 +1,57 @@
-.banner{
-	width: 100%;	
+.banner-jazz{
+	width: 90%;	
 	height: auto;
 	max-height: 350px;
+	padding-left: 10%;
 	display: flex;
 	align-items: center;
 	text-align: left;
 	background: center fixed url("../img/jazz-parallax.jpg");
 }
+.banner-boleros{
+	width: 90%;	
+	height: auto;
+	max-height: 350px;
+	padding-left: 10%;
+	display: flex;
+	align-items: center;
+	text-align: left;
+	background: center fixed url("../img/boleros-parallax.jpg");
+}
+.banner-baladas{
+	width: 90%;	
+	height: auto;
+	max-height: 350px;
+	padding-left: 10%;
+	display: flex;
+	align-items: center;
+	text-align: left;
+	background: center fixed url("../img/baladas-parallax.jpg");
+}
+.banner-jrock{
+	width: 90%;	
+	height: auto;
+	max-height: 350px;
+	padding-left: 10%;
+	display: flex;
+	align-items: center;
+	text-align: left;
+	background: center fixed url("../img/jrock-parallax.jpg");
+}
+.banner-indie{
+	width: 90%;	
+	height: auto;
+	max-height: 350px;
+	padding-left: 10%;
+	display: flex;
+	align-items: center;
+	text-align: left;
+	background: center fixed url("../img/indie-parallax.jpeg");
+}
 .p-parallax{
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 10em;
+	color: rgba(255, 255, 255, 1);
+	text-shadow: 5px 5px 2px #000;
 	
 }
