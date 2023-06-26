@@ -36,7 +36,7 @@
 	<?php include('navbar.php'); ?>
 
 	<!--Presentacion del Proyecto-->
-	<div class="ContenedorGrid">
+	<div class="ContenedorGrid FondoObscuro">
 
 		<!-- columna Izquierda (Nombre del Sitio) -->
 		<div class="TotalCenter">
@@ -49,7 +49,7 @@
 		<!-- columna Derecha (Carrusel) -->
 		<div class="TotalCenter">
 			<!--Aqui va Carrusel de Imagenes con Canciones mas Escuchadas)-->
-			<h3 class="FuentePrincipal">¡Top 5 México!</h3>
+			<h3 class="FuentePrincipal" style="color: white;">¡Top 5 México!</h3>
 			<!-- Slider main container -->
 			<div class="swiper">
 			<!-- Additional required wrapper -->
