@@ -10,7 +10,8 @@
     <link rel="stylesheet" type="text/css" href="css/parallax.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/slider.css">
+	<link  rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <!--CSS Local-->
     <style type="text/css">
     	.TotalCenter{
@@ -18,10 +19,19 @@
     	}#ABack{
     		display: none;
     	}
+		.swiper {
+			width: 600px;
+			height: 300px;
+		}
     </style>
+
+	<!-- JS Externo -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 </head>
 
-<body class="Margen-0">
+<body class="Margen-0" onload="quitBlock()">
 	<!--Llamada al navbar-->
 	<?php include('navbar.php'); ?>
 
@@ -39,6 +49,28 @@
 		<!-- columna Derecha (Carrusel) -->
 		<div class="TotalCenter">
 			<!--Aqui va Carrusel de Imagenes con Canciones mas Escuchadas)-->
+			<h3 class="FuentePrincipal">¡Top 5 México!</h3>
+			<!-- Slider main container -->
+			<div class="swiper">
+			<!-- Additional required wrapper -->
+			<div class="swiper-wrapper">
+				<!-- Slides -->
+				<div class="swiper-slide">
+					<img src="portadasMusic/Amor.jpg" alt="PortadaAmor" class="slider-img">
+				</div>
+				<div class="swiper-slide"><img src="portadasMusic/Bokurano.jpg" alt="PortadaAmor" class="slider-img"></div>
+				<div class="swiper-slide"><img src="portadasMusic/Bunka.jpg" alt="PortadaAmor" class="slider-img"></div>
+				<div class="swiper-slide"><img src="portadasMusic/Smile.jpg" alt="PortadaAmor" class="slider-img"></div>
+				<div class="swiper-slide"><img src="portadasMusic/The-Gods-We-Can-Touch.jpg" alt="PortadaAmor" class="slider-img"></div>
+				
+			</div>
+			
+
+			<!-- If we need navigation buttons -->
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>
+
+			</div>
 		</div>
 
 	</div>
@@ -66,5 +98,8 @@
 	<div class="banner-indie">
 		<p class="p-parallax">Indie</p>
 	</div>
+
+	<!-- JS Local -->
+	<script src="js/slider.js" type="text/javascript"></script>
 </body>
 </html>

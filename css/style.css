@@ -237,3 +237,15 @@ L-C: de Login a Crear Cuenta (vicebersa)*/
     cursor: pointer;
     color: #c3d9fd;
 }
+.slider-img{
+    max-height: 300px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+.center{
+    justify-content: center!important;
+    align-self: center!important;
+}
+h3{
+    font-size: 4em;
+}
