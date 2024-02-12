@@ -61,6 +61,7 @@
     padding-bottom: 20px;
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
+    z-index: 100;
 }
 
 
